@@ -1,10 +1,12 @@
-import {jest, test, expect, describe} from "@jest/globals"; // this is optional, all three are global variables im runner scope
+import { describe, expect, jest, test } from '@jest/globals';
+import { myRouteHandler } from './handlers';  
 
-describe('api test for the quiz', () => {
+describe('API Route Testing', () => {
+    test('should handle the route correctly', () => {
+        const req = {};  
+        const res = { json: jest.fn() };  
 
-    test('placeholder test, please remove ...', () => {
-        expect(true).toBeTruthy();
-    })
-
+        myRouteHandler(req, res);
+        expect(res.json).toHaveBeenCalledWith({ message: "Hello from myRouteHandler!" });
+    });
 });
-
