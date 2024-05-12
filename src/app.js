@@ -1,4 +1,4 @@
-import express from 'express';
+mport express from 'express';
 import { v4 as uuid } from 'uuid';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
@@ -39,11 +39,7 @@ app.post('/authenticate', async (req, res) => {
 
 app.get('/questions', async (req, res) => {
     try {
-<<<<<<< HEAD
-        const questions = await read('questions');  
-=======
         const questions = await read('questions');  // Assuming 'questions' reads 'questions.json'
->>>>>>> f02ea3a3192288a8d372e0cdcfc794bf5c419b16
         const formattedQuestions = questions.map(({ id, question, options }) => ({
             id,
             question,
@@ -60,11 +56,7 @@ app.get('/questions', async (req, res) => {
 app.get('/questions/:questionId', async (req, res) => {
     try {
         const { questionId } = req.params;
-<<<<<<< HEAD
-        const questions = await read('questions');  
-=======
         const questions = await read('questions');  // Reads all questions from the file
->>>>>>> f02ea3a3192288a8d372e0cdcfc794bf5c419b16
         const question = questions.find(q => q.id === questionId);
 
         if (!question) {
